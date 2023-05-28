@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">hiring...</title>
+
+    <style>
+
+        body{
+           
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            background-color: white;
+            text-align: center;
+            transition: all 2s ease-in-out;
+
+        }
+
+        .ball-container{
+
+            position: fixed;
+            top:1%;
+            left: 1%;
+            width: 50px;
+            height: 50px;
+            background-color:transparent;
+            border: 1px solid transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 10px 10px 10px;
+            z-index:100;
+
+        }
+
+        .ball{
+            
+            width: 40px;
+            height: 40px;
+            background-color: darkmagenta;
+            color: white;
+            font-size: 35px;
+            font-family: sans-serif;
+            font-weight: 900;
+            text-align: center;
+            animation: move 5s linear infinite;
+            transition: all 2s ease-in-out;
+            z-index: 100;
+        }
+
+        @keyframes move {
+            0%{
+                transform: rotate(0deg);
+
+
+            }
+
+           
+            100%{
+                
+                border-radius: 50%;
+                
+                transform: rotate(360deg);
+        
+                
+            }
+            
+        }
+
+
+        #header{
+
+            position: fixed;
+            top: 0;
+            left: 0.3%;
+            width: 98%;
+            border: 8px solid #3c535d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #061b2d;
+            font-size: 25px;
+            font-weight: 800;
+            padding-top:20px;
+            padding-bottom: 20px;
+            z-index: 100;
+            
+
+        }
+
+        #header a{
+            text-decoration: none;
+            color: orange;
+            animation: dance 2s linear infinite;
+
+        }
+
+        @keyframes dance{
+
+            0%{
+                
+                transform: rotate(0deg);
+            }
+            25%{
+                
+                transform: rotate(3deg);
+            }50%{
+                
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(-3deg);
+               
+            }
+
+        }
+
+        .menu{
+            position: fixed;
+            top: 18%;
+            left: 1%;
+            width: auto;
+            height: auto;
+            padding: 5px 5px 5px 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: 900;
+            font-size: 30px;
+            background-color: #061b2d;
+            color: antiquewhite;
+            border-radius: 10px;
+            transform: rotate(90deg);
+            text-decoration: none;
+            cursor: pointer;
+            z-index: 3;
+            
+
+        }
+        .menu-box{
+            position: fixed;
+            top: 26%;
+            left: 1%;
+            width: 35%;
+            height: auto;
+            padding: 20px 5px 20px 5px;
+            background-color:white;
+            border-radius: 5px;
+            display:grid;
+            grid-template-columns: auto;
+            z-index: 3;
+            font-weight: 500;
+            visibility: hidden;
+            user-select: none;
+            
+
+        }
+
+        .cls{
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            float: right;
+            width: auto;
+            height: auto;
+            padding: 5px 5px 5px 5px;
+            background-color: rgb(141, 35, 35);
+            color: white;
+            border: 0;
+            text-align: center;
+            z-index:50;
+
+        }
+
+        .menu-opt{
+            background-color: azure;
+            text-align: center;
+            padding: 5px 5px 5px 5px;
+            color: gray;
+            border-radius: 5px;
+            border: 0.003px solid rgb(199, 194, 194);
+        }
+
+        .menu-opt:hover{
+            color: gray;
+            background-color: rgb(188, 202, 202);
+        }
+
+       
+
+        .data1{
+
+            position: relative;
+            margin-top: 200px;
+            margin-left: 2%;
+            width: 90%;
+            border-radius: 10px;
+            height: auto;
+            padding: 50px;
+            text-align: justify;
+            background-color:rgba(255, 255, 255, 0.829);
+            color: grey;
+            word-wrap: break-word;
+            white-space:normal;
+            box-shadow: 2px 4px 10px 2px grey;
+
+        }
+        .data1 p{
+            color:teal;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 400;
+        }
+
+        .data-img{
+
+            position: relative;
+            margin-top: 50px;
+            width:100%;
+            height: 500px;
+
+        }
+        .img{
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width:100%;
+            max-height: 100%;
+
+
+        }
+
+        .footer{
+
+            position: relative;
+            margin-top: 200px;
+            left: 0;
+            width: 100%;
+            height:500px;
+            background-color: #292929;
+            font-weight: 500;
+            font-size: 16px;
+            color: orange;
+            word-wrap: break-word;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+        .footer h1{
+
+            position: absolute;
+            margin-top: 50px;
+            
+            
+            font-size: 30px;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+
+
+        }
+        .list{
+            position: absolute;
+            display: block;
+            
+            width: auto;
+            height: auto;
+            border: 0px solid blue;
+            top: 5%;
+            margin-right: 2%;
+
+        }
+        ul{
+            list-style: none;
+            
+        }
+        .list a{
+          
+            
+            text-decoration: none;
+            color: orange;
+            font-size: 20px;
+            font-weight: 100;
+
+        }
+
+        .cr{
+            position: absolute;
+            bottom: 1%;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            font-size: 13px;
+        }
+       
+
+        
+
+
+        @media only screen and (max-width:450px) {
+            
+
+            .ball-container{
+                padding: 5px 5px 5px 5px;
+                top: 0%;
+            }
+            .ball{
+                width: 25px;
+                height: 25px;
+            }
+
+            #header p{
+                font-size: 18px;
+            }
+
+            .data1{
+                width: 50%;
+                
+            }
+
+            
+
+        }
+
+        
+        @media only screen and (max-width:550px) {
+        
+        .data1{
+            width: 70%;
+        }
+
+        .menu-box{
+
+            width: 50%;
+        }
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+  
+    
+<div id="header">
+
+<a href="home.html" id="jsz">jobseekerzone!</a>
+
+
+</div>
+
+    
+ <div class="ball-container">
+    <div class="ball" id="ball">
+
+    </div>
+
+ </div>  
+ 
+ 
+ <a class="menu" id="menu"> ||| </a>
+
+
+
+
+ <div class="menu-box" id="mbox">
+    <button class="cls" id="cls"> X </button>
+    <a href="home.html" class="menu-opt">Home</a>
+    <a href="index.php" class="menu-opt">Today jobs</a>
+    <a class="menu-opt">option</a>
+    <a class="menu-opt">option</a>
+    <a class="menu-opt">option</a>
+
+
+ </div>
+
+
+
+
+
+
+
+
+        <div class="data1" style="background-color: aquamarine;">
+           
+
+            <h2> 
+                <i>The Job seeker's platform</i>
+            </h2>
+
+            <p>
+                
+                ""   Eventually, here is the best opportunity for getting
+                job in various companies through this platform , so 
+                dont't waste your time on spending with something else
+                wake up soon ... claim your interview now and wish you all the  very best  to you from our organisation""
+
+            </p>
+
+            
+
+        </div>
+
+
+        <div class="data1">
+
+            <h2> 
+                The Job seeker's platform
+            </h2>
+
+            <p>
+                
+                ""   Eventually, here is the best opportunity for getting
+                job in various companies through this platform , so 
+                dont't waste your time on spending with something else
+                wake up soon ... claim your interview now and wish you all the  very best  to you from our organisation""
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="data-img">
+
+           <img src="gif1.gif" alt="" class="img">
+
+        </div>
+
+
+
+        <div class="data1">
+
+            <h2> 
+                The Job seeker's platform
+            </h2>
+
+            <p>
+                
+                ""   Eventually, here is the best opportunity for getting
+                job in various companies through this platform , so 
+                dont't waste your time on spending with something else
+                wake up soon ... claim your interview now and wish you all the  very best  to you from our organisation""
+
+            </p>
+
+
+        </div>
+
+
+       
+
+
+
+
+ <div class="footer">
+
+          
+
+    <h1> jobseekerzone </h1>
+
+
+
+
+<div class="list">
+
+    <ul>
+
+<li><a href=""> home </a></li>
+<li><a href=""> home </a></li>
+<li><a href=""> home </a></li>
+<li><a href=""> home </a></li>
+<li><a href=""> home </a></li>
+<li><a href=""> home </a></li>
+<li><a href=""> home </a></li>
+
+
+</ul>    
+
+</div>
+
+<div class="cr"> copyrights reserved at 2023 </div>
+
+
+
+</div>
+
+
+
+
+<script>
+
+let c=0;
+
+setInterval(function(){
+
+    c+=1;
+
+let title = document.getElementById("title");
+
+if(c==1){
+
+    title.innerHTML = "hiring . ";
+
+}
+else if(c==2){
+
+    title.innerHTML = "hiring . . ";
+}
+
+else{
+    title.innerHTML = "hiring . . . ";
+}
+
+if(c>3){
+    c=0;
+}
+
+
+},1000)
+
+let d=0;
+
+setInterval(function(){
+d+=1
+
+let jsz = document.getElementById("jsz");
+
+
+if(d==1){
+jsz.style.transform="rotate(2deg)";
+}
+else if(d==2){
+jsz.style.transform="rotate(-2deg)";
+}
+else{
+jsz.style.transform="rotate(2deg)";
+
+}
+
+if(d>3){
+    d=0;
+}
+
+
+},500)
+
+
+
+  
+
+
+
+let menu = document.getElementById("menu");
+let cls = document.getElementById("cls");
+
+
+menu.addEventListener("click",function(){
+    
+
+    let mbox = document.getElementById("mbox");
+
+    let s = mbox.style.visibility;
+
+    if(s=="visible"){
+
+        mbox.style.visibility = "hidden";
+    }
+    else{
+
+        mbox.style.visibility = "visible";
+    }
+
+});
+
+cls.addEventListener("click",function(){
+
+    mbox.style.visibility = "hidden";
+
+
+});
+
+
+
+
+</script>
+
+</body>
+</html>
